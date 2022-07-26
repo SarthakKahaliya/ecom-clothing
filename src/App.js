@@ -1,8 +1,6 @@
-import "./categories.styles.scss";
+import Categories from "./components/categories/categories.component";
 
 const App = () => {
-  const categories = require("./categories.json");
-  console.log(categories);
   // const categories = [
   //   {
   //     id: 1,
@@ -26,27 +24,7 @@ const App = () => {
   //   },
   // ];
 
-  return (
-    <div className="categories-container">
-      {categories.map((category) => {
-        return (
-          <div key={category.id} className="category-container">
-            {/* <img /> */}
-            <div
-              className="background-image"
-              style={{
-                backgroundImage: `url(${category.imageUrl})`,
-              }}
-            />
-            <div className="category-body-container">
-              <h2>{category.title}</h2>
-              <p>Shop Now</p>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+  return <Categories />;
 };
 
 export default App;
