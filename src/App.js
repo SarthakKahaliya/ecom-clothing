@@ -1,30 +1,16 @@
-import Categories from "./components/categories/categories.component";
+import { Routes, Route } from "react-router-dom";
+
+import Navigation from "./routes/navigation/navigation.component";
+import Home from "./routes/home/home.component";
 
 const App = () => {
-  // const categories = [
-  //   {
-  //     id: 1,
-  //     title: "Hats",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Jackets",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Sneakers",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "Women",
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "Men",
-  //   },
-  // ];
-
-  return <Categories />;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;
