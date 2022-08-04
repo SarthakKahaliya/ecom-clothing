@@ -8,6 +8,7 @@ import {
   createUserDocFromAuth,
 } from "../../utils/firebase/firebase.utils";
 
+import Button from "../../components/button/button.component";
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
 
 const SignIn = () => {
@@ -27,7 +28,12 @@ const SignIn = () => {
   return (
     <div>
       <h1>Sign-in Page</h1>
-      <button onClick={logGoogleUser}>Sign in with Google</button>
+      {/* <button onClick={logGoogleUser}>Sign in with Google</button> */}
+      <Button
+        children="Sign in with Google"
+        buttonType="google"
+        onclick={logGoogleUser}
+      />
       {/* <button onClick={signInWithGoogleRedirect}>
         Sign in with Google Redirect
       </button> */}

@@ -1,5 +1,8 @@
 import { useState } from "react";
+import "./sign-up-form.styles.scss";
 import FormInput from "../form-input/form-input.component";
+import Button from "../button/button.component";
+
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocFromAuth,
@@ -16,10 +19,6 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
 
   const { displayName, email, password, confirmPassword } = formFields;
-
-  const resetFormFields = () => {
-    setFormFields(defaultFormFields);
-  };
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -56,9 +55,14 @@ const SignUpForm = () => {
     }
   };
 
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
   return (
-    <div>
-      <h1>Sign Up Form</h1>
+    <div className="sign-up-container">
+      <h2>Don't have an account?</h2>
+      <span>Sign Up Form</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
@@ -96,7 +100,7 @@ const SignUpForm = () => {
           required
         />
 
-        <button type="submit">Sign Up</button>
+        <Button children="Sign Up" type="submit" />
       </form>
     </div>
   );
