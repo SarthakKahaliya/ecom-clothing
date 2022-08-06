@@ -20,6 +20,10 @@ const SignUpForm = () => {
 
   const { displayName, email, password, confirmPassword } = formFields;
 
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
   const handleChange = (event) => {
     const { value, name } = event.target;
     setFormFields({
@@ -35,13 +39,13 @@ const SignUpForm = () => {
       return;
     }
     try {
-      const response = await createAuthUserWithEmailAndPassword(
+      const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
-      const userDocRef = await createUserDocFromAuth({
-        ...response.user,
+      // console.log(user);
+      await createUserDocFromAuth({
+        ...user,
         displayName: displayName,
       });
 
@@ -55,14 +59,10 @@ const SignUpForm = () => {
     }
   };
 
-  const resetFormFields = () => {
-    setFormFields(defaultFormFields);
-  };
-
   return (
     <div className="sign-up-container">
       <h2>Don't have an account?</h2>
-      <span>Sign Up Form</span>
+      <span>Sign Up</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
@@ -88,6 +88,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           name="password"
           value={password}
+          autoComplete="on"
           required
         />
 
@@ -97,6 +98,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           name="confirmPassword"
           value={confirmPassword}
+          autoComplete="on"
           required
         />
 
