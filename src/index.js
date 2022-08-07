@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import { UserProvider } from "./contexts/user.context";
 import { ProductsProvider } from "./contexts/products.context";
+import { CartProvider } from "./contexts/cart.context";
 
 import "./index.scss";
 
@@ -16,7 +17,9 @@ root.render(
       <UserProvider>
         {/* putting the user provider above the product provider so that products can use user information */}
         <ProductsProvider>
-          <App />
+          <CartProvider>
+            <App />
+          </CartProvider>
         </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
