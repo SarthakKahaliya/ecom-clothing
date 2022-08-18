@@ -1,0 +1,37 @@
+.checkout-container {
+  font-weight: bold;
+  padding: 10px 7%;
+
+  .checkout-label-container {
+    padding: 0px 15px;
+    display: flex;
+
+    .image {
+      width: 120px;
+      align-items: center;
+    }
+
+    .labels {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 0px 20px;
+
+      .name {
+        width: 20%;
+      }
+
+      .price {
+        width: 10%;
+      }
+
+      .quantity {
+        padding: 0px 40px;
+      }
+
+      .sub-total {
+        width: 10%;
+      }
+    }
+  }
+}
