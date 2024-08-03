@@ -18,12 +18,12 @@ import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB1234f7FCgk9M-TEFIMvbVInLuc3inBlg",
-  authDomain: "ecom-clothing-db-8bd62.firebaseapp.com",
-  projectId: "ecom-clothing-db-8bd62",
-  storageBucket: "ecom-clothing-db-8bd62.appspot.com",
-  messagingSenderId: "723065383913",
-  appId: "1:723065383913:web:f7d698081d95d93082f978",
+  apiKey: "API Key",
+  authDomain: "Auth Domain",
+  projectId: "Project ID",
+  storageBucket: "Storage Bucket",
+  messagingSenderId: "Messaging Sender ID",
+  appId: "1:(Messaging Sender ID):web:(Web ID)",
 };
 
 // Initialize Firebase
